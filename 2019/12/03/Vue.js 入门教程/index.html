@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives | Hexo</title>
+  <title>Vue.js 入门教程 | Hexo</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -167,78 +167,114 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
-
-
-
-<section id="services">
+      
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2019/10/21/MYSQL知识点/">MYSQL知识点</a></h4>
-                            
-                            <p><time datetime="2019-10-20T16:00:00.000Z"><a href="/2019/10/21/MYSQL知识点/">2019-10-21</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2019/10/11/java面向对象知识点 (1)/">java面向对象知识点</a></h4>
-                            
-                            <p><time datetime="2019-10-11T04:02:24.000Z"><a href="/2019/10/11/java面向对象知识点 (1)/">2019-10-11</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2019-12-03T06:36:11.730Z" itemprop="datePublished">
+          2019-12-03
+      </time>
+    
+</span>
+                <h1>Vue.js 入门教程</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="Vue-js-条件与循环"><a href="#Vue-js-条件与循环" class="headerlink" title="Vue.js 条件与循环"></a>Vue.js 条件与循环</h1><h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><h3 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h3><p>条件判断使用 v-if 指令：</p>
+<h2 id="v-if-指令"><a href="#v-if-指令" class="headerlink" title="v-if 指令"></a>v-if 指令</h2><p>在元素 和 template 中使用 v-if 指令：</p>
+<div id="app">     <p v-if="seen">现在你看到我了</p>     <template v-if="ok">       <h1>菜鸟教程</h1>       <p>学的不仅是技术，更是梦想！</p>       <p>哈哈哈，打字辛苦啊！！！</p>     </template> </div>      <script> new Vue({   el: '#app',   data: {     seen: true,     ok: true   } }) </script>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+
+<p><a href="">尝试一下 »</a></p>
+<p>这里， v-if 指令将根据表达式 seen 的值(true 或 false )来决定是否插入 p 元素。</p>
+<p>在字符串模板中，如 Handlebars ，我们得像这样写一个条件块：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Handlebars 模板 --&gt;</span><br><span class="line">&#123;&#123;#if ok&#125;&#125;</span><br><span class="line">  &lt;h1&gt;Yes&lt;/h1&gt;</span><br><span class="line">&#123;&#123;/if&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="v-else"><a href="#v-else" class="headerlink" title="v-else"></a>v-else</h3><p>可以用 v-else 指令给 v-if 添加一个 “else” 块：</p>
+<h2 id="v-else-指令"><a href="#v-else-指令" class="headerlink" title="v-else 指令"></a>v-else 指令</h2><p>随机生成一个数字，判断是否大于0.5，然后输出对应信息：</p>
+<div id="app">     <div v-if="Math.random() > 0.5">       Sorry     </div>     <div v-else>       Not sorry     </div> </div>      <script> new Vue({   el: '#app' }) </script>
+
+
+<p><a href="">尝试一下 »</a></p>
+<h3 id="v-else-if"><a href="#v-else-if" class="headerlink" title="v-else-if"></a>v-else-if</h3><p>v-else-if 在 2.1.0 新增，顾名思义，用作 v-if 的 else-if 块。可以链式的多次使用：</p>
+<h2 id="v-else-指令-1"><a href="#v-else-指令-1" class="headerlink" title="v-else 指令"></a>v-else 指令</h2><p>判断 type 变量的值：</p>
+<div id="app">     <div v-if="type === 'A'">       A     </div>     <div v-else-if="type === 'B'">       B     </div>     <div v-else-if="type === 'C'">       C     </div>     <div v-else>       Not A/B/C     </div> </div>      <script> new Vue({   el: '#app',   data: {     type: 'C'   } }) </script>
+
+
+<p><a href="">尝试一下 »</a></p>
+<blockquote>
+<p>v-else 、v-else-if 必须跟在 v-if 或者 v-else-if之后。</p>
+</blockquote>
+<h3 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h3><p>我们也可以使用 v-show 指令来根据条件展示元素：</p>
+<h2 id="v-show-指令"><a href="#v-show-指令" class="headerlink" title="v-show 指令"></a>v-show 指令</h2><h1 v-show="ok">Hello!</h1>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    
+    <a class="pull-right" href="/2019/12/03/Vue.js%20%E5%AE%89%E8%A3%85/">
+        Vue.js 安装 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
