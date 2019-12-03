@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Vue.js 入门教程 | Hexo</title>
+  <title>jQuery 效果 - 淡入淡出 | Hexo</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -173,54 +173,81 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2019-12-03T06:36:11.730Z" itemprop="datePublished">
+      <time datetime="2019-12-03T06:43:16.912Z" itemprop="datePublished">
           2019-12-03
       </time>
     
 </span>
-                <h1>Vue.js 入门教程</h1>
+                <h1>jQuery 效果 - 淡入淡出</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h1 id="Vue-js-条件与循环"><a href="#Vue-js-条件与循环" class="headerlink" title="Vue.js 条件与循环"></a>Vue.js 条件与循环</h1><h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><h3 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h3><p>条件判断使用 v-if 指令：</p>
-<h2 id="v-if-指令"><a href="#v-if-指令" class="headerlink" title="v-if 指令"></a>v-if 指令</h2><p>在元素 和 template 中使用 v-if 指令：</p>
-<div id="app">     <p v-if="seen">现在你看到我了</p>     <template v-if="ok">       <h1>菜鸟教程</h1>       <p>学的不仅是技术，更是梦想！</p>       <p>哈哈哈，打字辛苦啊！！！</p>     </template> </div>      <script> new Vue({   el: '#app',   data: {     seen: true,     ok: true   } }) </script>
-
-
+      		<h1 id="jQuery-效果-淡入淡出"><a href="#jQuery-效果-淡入淡出" class="headerlink" title="jQuery 效果 - 淡入淡出"></a>jQuery 效果 - 淡入淡出</h1><hr>
+<p>通过 jQuery，您可以实现元素的淡入淡出效果。</p>
+<p>点击展示 <strong>淡入/淡出</strong> 面板</p>
+<p>因为时间是宝贵的，我们提供快捷方便的学习方法。 </p>
+<p>在菜鸟教程,你可以学习需要的知识。</p>
+<hr>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p><a href="">jQuery fadeIn()</a><br>演示 jQuery fadeIn() 方法。</p>
+<p><a href="">jQuery fadeOut()</a><br>演示 jQuery fadeOut() 方法。</p>
+<p><a href="">jQuery  fadeToggle()</a><br>演示 jQuery fadeToggle() 方法。</p>
+<p><a href="">jQuery fadeTo()</a><br>演示 jQuery fadeTo() 方法。</p>
+<hr>
+<h2 id="jQuery-Fading-方法"><a href="#jQuery-Fading-方法" class="headerlink" title="jQuery Fading 方法"></a>jQuery Fading 方法</h2><p>通过 jQuery，您可以实现元素的淡入淡出效果。</p>
+<p>jQuery 拥有下面四种 fade 方法：</p>
+<ul>
+<li>fadeIn()</li>
+<li>fadeOut()</li>
+<li>fadeToggle()</li>
+<li>fadeTo()</li>
+</ul>
+<hr>
+<h2 id="jQuery-fadeIn-方法"><a href="#jQuery-fadeIn-方法" class="headerlink" title="jQuery fadeIn() 方法"></a>jQuery fadeIn() 方法</h2><p>jQuery fadeIn() 用于淡入已隐藏的元素。</p>
+<p><strong>语法:</strong></p>
+<p>$(<em>selector</em>).fadeIn(<em>speed,callback</em>);</p>
+<p>可选的 speed 参数规定效果的时长。它可以取以下值：”slow”、”fast” 或毫秒。.</p>
+<p>可选的 callback 参数是 fading 完成后所执行的函数名称。</p>
+<p>下面的例子演示了带有不同参数的 fadeIn() 方法：</p>
+<h2 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h2><p>$(“button”).click(function(){  $(“#div1”).fadeIn();  $(“#div2”).fadeIn(“slow”);  $(“#div3”).fadeIn(3000); });</p>
 <p><a href="">尝试一下 »</a></p>
-<p>这里， v-if 指令将根据表达式 seen 的值(true 或 false )来决定是否插入 p 元素。</p>
-<p>在字符串模板中，如 Handlebars ，我们得像这样写一个条件块：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Handlebars 模板 --&gt;</span><br><span class="line">&#123;&#123;#if ok&#125;&#125;</span><br><span class="line">  &lt;h1&gt;Yes&lt;/h1&gt;</span><br><span class="line">&#123;&#123;/if&#125;&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="v-else"><a href="#v-else" class="headerlink" title="v-else"></a>v-else</h3><p>可以用 v-else 指令给 v-if 添加一个 “else” 块：</p>
-<h2 id="v-else-指令"><a href="#v-else-指令" class="headerlink" title="v-else 指令"></a>v-else 指令</h2><p>随机生成一个数字，判断是否大于0.5，然后输出对应信息：</p>
-<div id="app">     <div v-if="Math.random() > 0.5">       Sorry     </div>     <div v-else>       Not sorry     </div> </div>      <script> new Vue({   el: '#app' }) </script>
-
-
+<hr>
+<h2 id="jQuery-fadeOut-方法"><a href="#jQuery-fadeOut-方法" class="headerlink" title="jQuery fadeOut() 方法"></a>jQuery fadeOut() 方法</h2><p>jQuery fadeOut() 方法用于淡出可见元素。</p>
+<p><strong>语法:</strong></p>
+<p>$(<em>selector</em>).fadeOut(<em>speed,callback</em>);</p>
+<p>可选的 speed 参数规定效果的时长。它可以取以下值：”slow”、”fast” 或毫秒。</p>
+<p>可选的 callback 参数是 fading 完成后所执行的函数名称。 </p>
+<p>下面的例子演示了带有不同参数的 fadeOut() 方法：</p>
+<h2 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h2><p>$(“button”).click(function(){  $(“#div1”).fadeOut();  $(“#div2”).fadeOut(“slow”);  $(“#div3”).fadeOut(3000); });</p>
 <p><a href="">尝试一下 »</a></p>
-<h3 id="v-else-if"><a href="#v-else-if" class="headerlink" title="v-else-if"></a>v-else-if</h3><p>v-else-if 在 2.1.0 新增，顾名思义，用作 v-if 的 else-if 块。可以链式的多次使用：</p>
-<h2 id="v-else-指令-1"><a href="#v-else-指令-1" class="headerlink" title="v-else 指令"></a>v-else 指令</h2><p>判断 type 变量的值：</p>
-<div id="app">     <div v-if="type === 'A'">       A     </div>     <div v-else-if="type === 'B'">       B     </div>     <div v-else-if="type === 'C'">       C     </div>     <div v-else>       Not A/B/C     </div> </div>      <script> new Vue({   el: '#app',   data: {     type: 'C'   } }) </script>
-
-
+<hr>
+<h2 id="jQuery-fadeToggle-方法"><a href="#jQuery-fadeToggle-方法" class="headerlink" title="jQuery fadeToggle() 方法"></a>jQuery fadeToggle() 方法</h2><p>jQuery fadeToggle() 方法可以在 fadeIn() 与 fadeOut() 方法之间进行切换。</p>
+<p>如果元素已淡出，则 fadeToggle() 会向元素添加淡入效果。</p>
+<p>如果元素已淡入，则 fadeToggle() 会向元素添加淡出效果。</p>
+<p><strong>语法:</strong></p>
+<p>$(<em>selector</em>).fadeToggle(<em>speed,callback</em>);</p>
+<p>可选的 speed 参数规定效果的时长。它可以取以下值：”slow”、”fast” 或毫秒。</p>
+<p>可选的 callback 参数是 fading 完成后所执行的函数名称。</p>
+<p>下面的例子演示了带有不同参数的 fadeToggle() 方法：</p>
+<h2 id="实例-3"><a href="#实例-3" class="headerlink" title="实例"></a>实例</h2><p>$(“button”).click(function(){  $(“#div1”).fadeToggle();  $(“#div2”).fadeToggle(“slow”);  $(“#div3”).fadeToggle(3000); });</p>
 <p><a href="">尝试一下 »</a></p>
-<blockquote>
-<p>v-else 、v-else-if 必须跟在 v-if 或者 v-else-if之后。</p>
-</blockquote>
-<h3 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h3><p>我们也可以使用 v-show 指令来根据条件展示元素：</p>
-<h2 id="v-show-指令"><a href="#v-show-指令" class="headerlink" title="v-show 指令"></a>v-show 指令</h2><h1 v-show="ok">Hello!</h1>
+<hr>
+<h2 id="jQuery-fadeTo-方法"><a href="#jQuery-fadeTo-方法" class="headerlink" title="jQuery fadeTo() 方法"></a>jQuery fadeTo() 方法</h2><p>jQuery fadeTo() 方法允许渐变为给定的不透明度（值介于 0 与 1 之间）。</p>
+<p><strong>语法:</strong></p>
+<p>$(<em>selector</em>).fadeTo(<em>speed,opacity,callback</em>);</p>
+<p>必需的 speed 参数规定效果的时长。它可以取以下值：”slow”、”fast” 或毫秒。</p>
+<p>fadeTo() 方法中必需的 opacity 参数将淡入淡出效果设置为给定的不透明度（值介于 0 与 1 之间）。</p>
+<p>可选的 callback 参数是该函数完成后所执行的函数名称。</p>
+<p>下面的例子演示了带有不同参数的 fadeTo() 方法：</p>
+<h2 id="实例-4"><a href="#实例-4" class="headerlink" title="实例"></a>实例</h2><p>$(“button”).click(function(){  $(“#div1”).fadeTo(“slow”,0.15);  $(“#div2”).fadeTo(“slow”,0.4);  $(“#div3”).fadeTo(“slow”,0.7); });</p>
+
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/12/03/jQuery%20%E6%95%88%E6%9E%9C%20-%20%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA/" style="float: left;">
-        ← jQuery 效果 - 淡入淡出
-    </a>
     
-    
-    <a class="pull-right" href="/2019/12/03/Vue.js%20%E5%AE%89%E8%A3%85/">
-        Vue.js 安装 →
+    <a class="pull-right" href="/2019/12/03/Vue.js%20%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/">
+        Vue.js 入门教程 →
     </a>
     
 </nav>
